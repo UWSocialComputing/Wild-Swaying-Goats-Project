@@ -1,10 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import BibliographyPage from "./BibliographyPage";
+import AddSourcePage from "./AddSourcePage";
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+  // OLD APP STUFF FROM INIT
   // return (
   //   <div className="App">
   //     <header className="App-header">
@@ -23,15 +24,13 @@ function App() {
   //     </header>
   //   </div>
   // );
+
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path="/">
-            <BibliographyPage/>
-          </Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<BibliographyPage />} />
+        <Route path="/add-source" element={<AddSourcePage />} />
+      </Routes>
     </Router>
   )
 }
