@@ -35,6 +35,21 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function BibliograpyPage() {
   return (
     <Grid container p={2} spacing={5}>
+      <Grid item xs={12}>
+        <Item>
+          Overall Title
+        </Item>
+      </Grid>
+      <Grid item xs={6}>
+        <Item>
+          Side 1 Title
+        </Item>
+      </Grid>
+      <Grid item xs={6}>
+        <Item>
+          Side 2 Title
+        </Item>
+      </Grid>
       <Grid item xs={6}>
         <Item>
           <TableContainer component={Paper}>
@@ -42,7 +57,7 @@ export default function BibliograpyPage() {
               <TableHead>
                 <TableRow>
                   <TableCell align="left">Source</TableCell>
-                  <TableCell align="left">Score</TableCell>
+                  <TableCell align="left">Quality</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -68,7 +83,7 @@ export default function BibliograpyPage() {
               <TableHead>
                 <TableRow>
                   <TableCell align="left">Source</TableCell>
-                  <TableCell align="left">Score</TableCell>
+                  <TableCell align="left">Quality</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
