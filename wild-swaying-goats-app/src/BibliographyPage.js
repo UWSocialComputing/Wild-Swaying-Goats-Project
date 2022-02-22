@@ -17,11 +17,11 @@ function createData(source, score) {
 }
 
 const rows = [
-  createData(<Source displayText={"Testing"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Testing"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Testing"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Testing"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Testing"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>)
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>)
 ];
 
 const Item = styled(Paper)(({ theme }) => ({
