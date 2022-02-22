@@ -1,16 +1,18 @@
 import React from "react";
-import styles from './Source.css';
-import Button from 'react-bootstrap/Button'
+import Button from '@mui/material/Button';
 
 
-class Source extends React.Component {
-    render() {
-      return (
-          <div>
-              <Button>
-                  props.title
-              </Button>
-          </div>
-      );
-    }
+export default function Source(displayText, link){
+    return (
+        <div>
+            <Button
+                variant="text"
+                onClick={() => {
+                    window.location.href = {link};
+                }}
+            >
+                {displayText}
+            </Button>
+        </div>
+    );
 }
