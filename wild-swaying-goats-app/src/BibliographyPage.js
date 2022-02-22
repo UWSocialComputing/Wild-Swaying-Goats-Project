@@ -34,7 +34,22 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BibliograpyPage() {
   return (
-    <Grid container spacing={2}>
+    <Grid container p={2} spacing={5}>
+      <Grid item xs={12}>
+        <Item>
+          Overall Title
+        </Item>
+      </Grid>
+      <Grid item xs={6}>
+        <Item>
+          Side 1 Title
+        </Item>
+      </Grid>
+      <Grid item xs={6}>
+        <Item>
+          Side 2 Title
+        </Item>
+      </Grid>
       <Grid item xs={6}>
         <Item>
           <TableContainer component={Paper}>
@@ -42,7 +57,7 @@ export default function BibliograpyPage() {
               <TableHead>
                 <TableRow>
                   <TableCell align="left">Source</TableCell>
-                  <TableCell align="right">Score</TableCell>
+                  <TableCell align="left">Quality</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -51,11 +66,8 @@ export default function BibliograpyPage() {
                     key={row.name}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
                     <TableCell align="left">{row.source}</TableCell>
-                    <TableCell align="right">{row.score}</TableCell>
+                    <TableCell align="left">{row.score}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
@@ -71,7 +83,7 @@ export default function BibliograpyPage() {
               <TableHead>
                 <TableRow>
                   <TableCell align="left">Source</TableCell>
-                  <TableCell align="right">Score</TableCell>
+                  <TableCell align="left">Quality</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -80,11 +92,8 @@ export default function BibliograpyPage() {
                     key={row.name}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
-                    <TableCell component="th" scope="row">
-                      {row.name}
-                    </TableCell>
                     <TableCell align="left">{row.source}</TableCell>
-                    <TableCell align="right">{row.score}</TableCell>
+                    <TableCell align="left">{row.score}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
