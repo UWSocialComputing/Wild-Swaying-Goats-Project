@@ -73,20 +73,53 @@ function RenderSampleStringGroup() {
 
 function RenderForm(props) {
 
+  let sourceMetadata = props.sourceMetadata
+
   return (
     <div>
-      <Grid container style={{ marginTop: "15px" }}>
+      <Grid container spacing={5} style={{ marginTop: "15px" }}>
         <Grid item>
           <TextField
             required
-            error={ props.title === "" }
+            error={ sourceMetadata.title === "" }
             helperText="Required"
             id="title"
             label="Title"
             name="title"
-            value={ props.title }
+            value={ sourceMetadata.title }
             placeholder={ "Insert Source Title" }
-            onChange={ (event) => props.handleTitleChange }
+            onChange={ (event) => props.handleSourceMetadataChange }
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={5} style={{ marginTop: "15px" }}>
+        <Grid item>
+          <TextField
+            id="authors"
+            label="Authors"
+            name="authors"
+            value={ sourceMetadata.authors }
+            placeholder={ "Insert Source Authors" }
+            onChange={ (event) => props.handleSourceMetadataChange }
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+          />
+        </Grid>
+      </Grid>
+      <Grid container spacing={5} style={{ marginTop: "15px" }}>
+        <Grid item>
+          <TextField
+            required
+            error={ sourceMetadata.sourcelink === "" }
+            helperText="Required"
+            id="sourceLink"
+            label="SourceLink"
+            name="sourceLink"
+            value={ sourceMetadata.sourceLink }
+            placeholder={ "Insert Source Link" }
+            onChange={ (event) => props.handleSourceMetadataChange }
             InputLabelProps={{ shrink: true }}
             variant="outlined"
           />
@@ -101,19 +134,28 @@ function RenderForm(props) {
 // of our variables
 function AddSourceForm() {
 
-  const [title, setTitle] = useState("")
-  const [authors, setAuthors] = useState("")
-  const [link, setLink] = useState("")
-  const [date, setDate] = useState("2000-01-01")
+  const [sourceMetadata, setSourceMetadata] = useState({
+    title: "",
+    authors: "",
+    sourceLink: "",
+    date: "2000-01-01"
+  })
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value)
+  const handleSourceMetadataChange = (event) => {
+    event.persist()
+    setSourceMetadata(sourceMetadata => ({ ...sourceMetadata, [event.target.name]: event.target.value }))
+    
+    // Debugging
+    console.log(event.target.name + ": " + event.target.value)
   }
 
   return (
     <div style={{ marginLeft: "100px" }}>
       <RenderSampleStringGroup />
-      <RenderForm title={ title } handleTitleChange={ (event) => handleTitleChange(event) }/>
+      <RenderForm
+        sourceMetadata={ sourceMetadata }
+        handleSourceMetadataChange= { (event) => handleSourceMetadataChange(event) }
+      />
     </div>
   )
 }
