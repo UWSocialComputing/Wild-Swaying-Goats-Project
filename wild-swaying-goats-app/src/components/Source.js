@@ -8,7 +8,7 @@ export default function Source(props){
             <Button
                 variant="text"
                 onClick={() => {
-                    window.location.href = props.link;
+                    window.open(props.link, "_blank");
                 }}
             >
                 {props.displayText}
