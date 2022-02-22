@@ -3,7 +3,6 @@ import Slider from "@mui/material/Slider"
 
 export default function SliderScore(props) {
     return (
-      <div>
           <Slider
             aria-label="Quality"
             defaultValue={3}
@@ -13,6 +12,5 @@ export default function SliderScore(props) {
             min={1}
             max={5}
             />
-      </div>  
     );
 }
