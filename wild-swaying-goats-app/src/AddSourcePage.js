@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 
 // Child Component
 function RenderShowTextButton(props) {
@@ -71,14 +71,49 @@ function RenderSampleStringGroup() {
   )
 }
 
+function RenderForm(props) {
+
+  return (
+    <div>
+      <Grid container style={{ marginTop: "15px" }}>
+        <Grid item>
+          <TextField
+            required
+            error={ props.title === "" }
+            helperText="Required"
+            id="title"
+            label="Title"
+            name="title"
+            value={ props.title }
+            placeholder={ "Insert Source Title" }
+            onChange={ (event) => props.handleTitleChange }
+            InputLabelProps={{ shrink: true }}
+            variant="outlined"
+          />
+        </Grid>
+      </Grid>
+    </div>
+  )
+}
+
 // Parent Component
 // This is where we should keep ALL
 // of our variables
 function AddSourceForm() {
 
+  const [title, setTitle] = useState("")
+  const [authors, setAuthors] = useState("")
+  const [link, setLink] = useState("")
+  const [date, setDate] = useState("2000-01-01")
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value)
+  }
+
   return (
-    <div>
+    <div style={{ marginLeft: "100px" }}>
       <RenderSampleStringGroup />
+      <RenderForm title={ title } handleTitleChange={ (event) => handleTitleChange(event) }/>
     </div>
   )
 }
