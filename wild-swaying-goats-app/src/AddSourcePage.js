@@ -2,6 +2,8 @@ import "./App.css";
 import React, { useState } from "react";
 import { Button, Grid, TextField } from "@material-ui/core";
 import {Link} from "react-router-dom";
+import { LocalizationProvider, DatePicker } from "@mui/lab";
+import AdapterDateFns from '@mui/lab/AdapterDateFns';
 
 
 // Child Component
@@ -78,66 +80,88 @@ function RenderSampleStringGroup() {
 function RenderForm(props) {
 
   let sourceMetadata = props.sourceMetadata
+  let date = props.date
 
   return (
     <div>
-      <Grid container spacing={5} style={{ marginTop: "15px" }}>
-        <Grid item>
-          <TextField
-            required
-            error={ sourceMetadata.title === "" }
-            helperText="Required"
-            id="title"
-            label="Title"
-            name="title"
-            value={ sourceMetadata.title }
-            placeholder={ "Insert Source Title" }
-            onChange={ (event) => props.handleSourceMetadataChange }
-            InputLabelProps={{ shrink: true }}
-            variant="outlined"
-          />
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <TextField
+              required
+              error={ sourceMetadata.title === "" }
+              helperText="Required"
+              id="title"
+              label="Title"
+              name="title"
+              value={ sourceMetadata.title }
+              placeholder={ "Insert Source Title" }
+              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={5} style={{ marginTop: "15px" }}>
-        <Grid item>
-          <TextField
-            id="authors"
-            label="Authors"
-            name="authors"
-            value={ sourceMetadata.authors }
-            placeholder={ "Insert Source Authors" }
-            onChange={ (event) => props.handleSourceMetadataChange }
-            InputLabelProps={{ shrink: true }}
-            variant="outlined"
-          />
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <TextField
+              id="authors"
+              label="Authors"
+              name="authors"
+              value={ sourceMetadata.authors }
+              placeholder={ "Insert Source Authors" }
+              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
+          </Grid>
         </Grid>
-      </Grid>
-      <Grid container spacing={5} style={{ marginTop: "15px" }}>
-        <Grid item>
-          <TextField
-            required
-            error={ sourceMetadata.sourcelink === "" }
-            helperText="Required"
-            id="sourceLink"
-            label="SourceLink"
-            name="sourceLink"
-            value={ sourceMetadata.sourceLink }
-            placeholder={ "Insert Source Link" }
-            onChange={ (event) => props.handleSourceMetadataChange }
-            InputLabelProps={{ shrink: true }}
-            variant="outlined"
-          />
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <TextField
+              required
+              error={ sourceMetadata.sourcelink === "" }
+              helperText="Required"
+              id="sourceLink"
+              label="SourceLink"
+              name="sourceLink"
+              value={ sourceMetadata.sourceLink }
+              placeholder={ "Insert Source Link" }
+              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
+          </Grid>
         </Grid>
-      </Grid>
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <DatePicker
+              disableFuture
+              label="Responsive"
+              openTo="year"
+              views={['year', 'month', 'day']}
+              value={ date }
+              onChange={(newDate) => {
+                props.setDate(newDate)
+              }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </Grid>
+        </Grid>
 
-        <Link to="/">
-            <Button backgroundColor="#b4c5ed">
-                Cancel
-            </Button>
-            <Button color="#346beb">
-                Save
-            </Button>
-        </Link>
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <Link to="/">
+                <Button>
+                    Cancel
+                </Button>
+                <Button>
+                    Save
+                </Button>
+            </Link>
+          </Grid>
+        </Grid>        
+      </LocalizationProvider>
     </div>
   )
 }
@@ -147,11 +171,11 @@ function RenderForm(props) {
 // of our variables
 function AddSourceForm() {
 
+  const [date, setDate] = useState(new Date())
   const [sourceMetadata, setSourceMetadata] = useState({
     title: "",
     authors: "",
     sourceLink: "",
-    date: "2000-01-01"
   })
 
   const handleSourceMetadataChange = (event) => {
@@ -162,12 +186,18 @@ function AddSourceForm() {
     console.log(event.target.name + ": " + event.target.value)
   }
 
+  const handleDateChange = (event) => {
+    setDate(event.value)
+  }
+
   return (
     <div style={{ marginLeft: "100px" }}>
       <RenderSampleStringGroup />
       <RenderForm
         sourceMetadata={ sourceMetadata }
         handleSourceMetadataChange= { (event) => handleSourceMetadataChange(event) }
+        date={ date }
+        setDate={ setDate }
       />
     </div>
   )
