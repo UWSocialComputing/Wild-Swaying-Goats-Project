@@ -1,6 +1,8 @@
 import "./App.css";
 import React, { useState } from "react";
 import { Button, Grid, TextField } from "@material-ui/core";
+import {Link} from "react-router-dom";
+
 
 // Child Component
 function RenderShowTextButton(props) {
@@ -25,6 +27,8 @@ function RenderShowTextButton(props) {
     </div>
   )
 }
+
+
 
 // Sample "Parent" Component
 // Parent because it holds the actual
@@ -125,6 +129,15 @@ function RenderForm(props) {
           />
         </Grid>
       </Grid>
+
+        <Link to="/">
+            <Button backgroundColor="#b4c5ed">
+                Cancel
+            </Button>
+            <Button color="#346beb">
+                Save
+            </Button>
+        </Link>
     </div>
   )
 }

@@ -11,6 +11,8 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
+import {Button} from "@material-ui/core";
+import {Link} from "react-router-dom";
 
 function createData(source, score) {
   return { source, score };
@@ -101,6 +103,17 @@ export default function BibliograpyPage() {
           </TableContainer>
         </Item>
       </Grid>
+
+      <Link to="/add-source">
+        <Button backgroundColor="#b4c5ed">
+          Add New Source
+        </Button>
+        <Button color="#b4c5ed">
+          Add New Source
+        </Button>
+      </Link>
+
     </Grid>
+
   );
 }
