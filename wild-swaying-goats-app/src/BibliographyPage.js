@@ -2,16 +2,18 @@ import './App.css';
 import React from "react";
 import Source from './components/Source.js';
 import SliderScore from './components/SliderScore.js';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
-import {Button} from "@material-ui/core";
+import { 
+  Button, 
+  Grid, 
+  Paper, 
+  TableHead, 
+  TableRow, 
+  TableContainer, 
+  TableCell, 
+  TableBody, 
+  Table 
+} from "@material-ui/core";
 import {Link} from "react-router-dom";
 
 function createData(source, score) {
