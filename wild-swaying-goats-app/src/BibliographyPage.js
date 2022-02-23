@@ -38,7 +38,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BibliograpyPage() {
   return (
-    <Grid container p={2} spacing={5}>
+    <Grid container p={2} spacing={2}>
       <Grid item xs={12}>
         <Item>
           Overall Title
@@ -105,17 +105,22 @@ export default function BibliograpyPage() {
           </TableContainer>
         </Item>
       </Grid>
+      
+      <Grid item xs={6}>
+        <Item>
+          <Button backgroundColor="#b4c5ed" href="/add-source">
+            Add New Source
+          </Button>
+        </Item>
+      </Grid>
 
-      <Link to="/add-source">
-        <Button backgroundColor="#b4c5ed">
-          Add New Source
-        </Button>
-        <Button color="#b4c5ed">
-          Add New Source
-        </Button>
-      </Link>
-
+      <Grid item xs={6}>
+        <Item>
+          <Button backgroundColor="#b4c5ed" href="/add-source">
+            Add New Source
+          </Button>
+        </Item>
+      </Grid>
     </Grid>
-
   );
 }
