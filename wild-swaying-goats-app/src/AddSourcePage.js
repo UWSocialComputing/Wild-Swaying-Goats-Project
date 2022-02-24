@@ -6,84 +6,13 @@ import { LocalizationProvider, DatePicker } from "@mui/lab";
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import sources from "./data/sources.json";
 
-
-// Child Component
-function RenderShowTextButton(props) {
-
-  // When clicked, do this
-  // Don't really need event right now,
-  // but will be important if we need to pass
-  // information to button
-  const handleClick = async (event) => {
-    if (props.showText) {
-      props.setShowText(false)
-    } else {
-      props.setShowText(true)
-    }
-  }
-
-  return (
-    <div>
-      <Button onClick={ (event) => handleClick(event) }>
-        {"Show Text Button"}
-      </Button>
-    </div>
-  )
-}
-
-
-// Sample "Parent" Component
-// Parent because it holds the actual
-// variables (the one we set using useState),
-// but not actual Parent because
-// it is rendered in another component
-function RenderSampleStringGroup() {
-  // Convention to create variables and their setter
-  // useState sets their initial value
-  const [sampleString, setSampletring] = useState("Hello World!")
-  const [showText, setShowText] = useState(false)
-
-  // Conditional rendering
-  // Might have cleaner ways, idk lol
-  let components;
-  if (showText) {
-    components = (
-      <Grid item>
-        <RenderShowTextButton showText={ showText } setShowText={ setShowText } />
-        <p>
-          { sampleString }
-        </p>
-      </Grid>
-    )
-  } else {
-    components = (
-      <Grid item>
-        <RenderShowTextButton showText={ showText } setShowText={ setShowText } />
-      </Grid>
-    )
-  }
-
-  return (
-    <div>
-      <Grid
-        container
-        direction="column"
-        alignItems="center"
-        style={{ marginTop: '15px' }}
-      >
-        { components }
-      </Grid>
-    </div>
-  )
-}
-
 function RenderForm(props) {
 
   let source = props.source
   let date = props.date
 
   return (
-    <div>
+    <div style={{ marginLeft: "900px", marginTop: "200px" }}>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <Grid container spacing={5} style={{ marginTop: "15px" }}>
           <Grid item>
@@ -160,7 +89,7 @@ function RenderForm(props) {
                 </Button>
             </Link>
           </Grid>
-        </Grid>        
+        </Grid>
       </LocalizationProvider>
     </div>
   )
@@ -207,7 +136,6 @@ function AddSourceForm() {
 
   return (
     <div style={{ marginLeft: "100px" }}>
-      <RenderSampleStringGroup />
       <RenderForm
         source={ source }
         handleSourceChange= { (event) => handleSourceChange(event) }

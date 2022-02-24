@@ -38,21 +38,27 @@ export default function BibliograpyPage() {
   let side1Sources = data.side1Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore average={i.average}/>)});
   let side2Sources = data.side2Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore average={i.average}/>)});
   return (
-    <div>
+    <div style={{ marginLeft: "20px", marginRight: "20px", marginTop: "150px" }}>
       <Grid container p={2} spacing={2}>
         <Grid item xs={12}>
           <Item>
-            {discussionTitle}
+            <h2>
+              {discussionTitle}
+            </h2>
           </Item>
         </Grid>
         <Grid item xs={6}>
           <Item>
-            {side1}
+            <h3>
+              {side1}
+            </h3>
           </Item>
         </Grid>
         <Grid item xs={6}>
           <Item>
-            {side2}
+            <h3>
+              {side2}
+            </h3>
           </Item>
         </Grid>
         <Grid item xs={6}>
