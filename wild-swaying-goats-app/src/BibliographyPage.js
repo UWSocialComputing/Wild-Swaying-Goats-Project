@@ -31,33 +31,39 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 export default function BibliograpyPage() {
+  let data = require('./data/sources.json')[0];
+  let discussionTitle = data.discussionTitle;
+  let side1 = data.side1;
+  let side2 = data.side2;
+  let side1Sources = data.side1Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore average={i.average}/>)});
+  let side2Sources = data.side2Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore average={i.average}/>)});
   return (
     <div>
       <Grid container p={2} spacing={2}>
         <Grid item xs={12}>
           <Item>
-            Overall Title
+            {discussionTitle}
           </Item>
         </Grid>
         <Grid item xs={6}>
           <Item>
-            Side 1 Title
+            {side1}
           </Item>
         </Grid>
         <Grid item xs={6}>
           <Item>
-            Side 2 Title
+            {side2}
           </Item>
         </Grid>
         <Grid item xs={6}>
           <Item>
-            <BibTable rows={rows}/>
+            <BibTable rows={side1Sources}/>
           </Item>
         </Grid>
 
         <Grid item xs={6}>
           <Item>
-            <BibTable rows={rows}/>
+            <BibTable rows={side2Sources}/>
           </Item>
         </Grid>
         
