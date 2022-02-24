@@ -2,30 +2,24 @@ import './App.css';
 import React from "react";
 import Source from './components/Source.js';
 import SliderScore from './components/SliderScore.js';
+import BibTable from './components/BibTable.js';
 import { styled } from '@mui/material/styles';
 import { 
   Button, 
   Grid, 
-  Paper, 
-  TableHead, 
-  TableRow, 
-  TableContainer, 
-  TableCell, 
-  TableBody, 
-  Table 
+  Paper
 } from "@material-ui/core";
-import {Link} from "react-router-dom";
 
 function createData(source, score) {
   return { source, score };
 }
 
 const rows = [
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore/>)
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.6}/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.8}/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.2}/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={5.0}/>),
+  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={4.5}/>)
 ];
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -38,85 +32,51 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BibliograpyPage() {
   return (
-    <Grid container p={2} spacing={2}>
-      <Grid item xs={12}>
-        <Item>
-          Overall Title
-        </Item>
-      </Grid>
-      <Grid item xs={6}>
-        <Item>
-          Side 1 Title
-        </Item>
-      </Grid>
-      <Grid item xs={6}>
-        <Item>
-          Side 2 Title
-        </Item>
-      </Grid>
-      <Grid item xs={6}>
-        <Item>
-          <Table sx={{ minWidth: 250 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">Source</TableCell>
-                <TableCell align="left">Quality</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell align="left">{row.source}</TableCell>
-                  <TableCell align="left">{row.score}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Item>
-      </Grid>
+    <div>
+      <Grid container p={2} spacing={2}>
+        <Grid item xs={12}>
+          <Item>
+            Overall Title
+          </Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>
+            Side 1 Title
+          </Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>
+            Side 2 Title
+          </Item>
+        </Grid>
+        <Grid item xs={6}>
+          <Item>
+            <BibTable rows={rows}/>
+          </Item>
+        </Grid>
 
-      <Grid item xs={6}>
-        <Item>
-          <Table sx={{ minWidth: 250 }} aria-label="simple table">
-            <TableHead>
-              <TableRow>
-                <TableCell align="left">Source</TableCell>
-                <TableCell align="left">Quality</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
-                <TableRow
-                  key={row.name}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell align="left">{row.source}</TableCell>
-                  <TableCell align="left">{row.score}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Item>
-      </Grid>
-      
-      <Grid item xs={6}>
-        <Item>
-          <Button backgroundColor="#b4c5ed" href="/add-source">
-            Add New Source
-          </Button>
-        </Item>
-      </Grid>
+        <Grid item xs={6}>
+          <Item>
+            <BibTable rows={rows}/>
+          </Item>
+        </Grid>
+        
+        <Grid item xs={6}>
+          <Item>
+            <Button backgroundColor="#b4c5ed" href="/add-source">
+              Add New Source
+            </Button>
+          </Item>
+        </Grid>
 
-      <Grid item xs={6}>
-        <Item>
-          <Button backgroundColor="#b4c5ed" href="/add-source">
-            Add New Source
-          </Button>
-        </Item>
+        <Grid item xs={6}>
+          <Item>
+            <Button backgroundColor="#b4c5ed" href="/add-source">
+              Add New Source
+            </Button>
+          </Item>
+        </Grid>
       </Grid>
-    </Grid>
+    </div>
   );
 }
