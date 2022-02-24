@@ -3,6 +3,7 @@
 ## Context
 This is a capstone project from the University of Washington [Social Computing 
 course](https://social.cs.washington.edu/cse481social/).
-Our project seeks to encourage users with in online and offline discussion to be cautious about sources
-and misinformation. 
+
+Our project seeks to encourage users with in online and offline discussion to be cautious about misinformation.
+Our platform that encourages participants to utilize reliable sources and debate the validity of said sources. 
 
