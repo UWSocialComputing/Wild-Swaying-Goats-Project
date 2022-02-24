@@ -12,8 +12,8 @@ export default function BibTable(props) {
         <Table sx={{ minWidth: 250 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell align="left">Source</TableCell>
-                <TableCell align="left">Quality</TableCell>
+                <TableCell style={{ width: "60%" }} align="left">Source</TableCell>
+                <TableCell style={{ width: "20%" }} align="left">Quality</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -22,8 +22,8 @@ export default function BibTable(props) {
                   key={row.name}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
-                  <TableCell align="left">{row.source}</TableCell>
-                  <TableCell align="left">{row.score}</TableCell>
+                  <TableCell style={{ width: "60%" }} align="left">{row.source}</TableCell>
+                  <TableCell style={{ width: "20%" }} align="left">{row.score}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
