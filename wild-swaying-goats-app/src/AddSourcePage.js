@@ -4,6 +4,7 @@ import { Button, Grid, TextField } from "@material-ui/core";
 import {Link} from "react-router-dom";
 import { LocalizationProvider, DatePicker } from "@mui/lab";
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
+import sources from "./data/sources.json";
 
 
 // Child Component
@@ -29,7 +30,6 @@ function RenderShowTextButton(props) {
     </div>
   )
 }
-
 
 
 // Sample "Parent" Component
@@ -79,7 +79,7 @@ function RenderSampleStringGroup() {
 
 function RenderForm(props) {
 
-  let sourceMetadata = props.sourceMetadata
+  let source = props.source
   let date = props.date
 
   return (
@@ -89,14 +89,14 @@ function RenderForm(props) {
           <Grid item>
             <TextField
               required
-              error={ sourceMetadata.title === "" }
+              error={ sources.title === "" }
               helperText="Required"
               id="title"
               label="Title"
               name="title"
-              value={ sourceMetadata.title }
+              value={ sources.title }
               placeholder={ "Insert Source Title" }
-              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              onChange={ (event) => props.handleSourceChange(event) }
               InputLabelProps={{ shrink: true }}
               variant="outlined"
             />
@@ -108,9 +108,9 @@ function RenderForm(props) {
               id="authors"
               label="Authors"
               name="authors"
-              value={ sourceMetadata.authors }
+              value={ source.authors }
               placeholder={ "Insert Source Authors" }
-              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              onChange={ (event) => props.handleSourceChange(event) }
               InputLabelProps={{ shrink: true }}
               variant="outlined"
             />
@@ -120,14 +120,14 @@ function RenderForm(props) {
           <Grid item>
             <TextField
               required
-              error={ sourceMetadata.sourcelink === "" }
+              error={ source.sourcelink === "" }
               helperText="Required"
               id="sourceLink"
               label="SourceLink"
               name="sourceLink"
-              value={ sourceMetadata.sourceLink }
+              value={ source.sourceLink }
               placeholder={ "Insert Source Link" }
-              onChange={ (event) => props.handleSourceMetadataChange(event) }
+              onChange={ (event) => props.handleSourceChange(event) }
               InputLabelProps={{ shrink: true }}
               variant="outlined"
             />
@@ -137,7 +137,7 @@ function RenderForm(props) {
           <Grid item>
             <DatePicker
               disableFuture
-              label="Responsive"
+              label="Date"
               openTo="year"
               views={['year', 'month', 'day']}
               value={ date }
@@ -155,7 +155,7 @@ function RenderForm(props) {
                 <Button>
                     Cancel
                 </Button>
-                <Button>
+                <Button onClick={ (event) => props.handleSave(event) }>
                     Save
                 </Button>
             </Link>
@@ -172,32 +172,48 @@ function RenderForm(props) {
 function AddSourceForm() {
 
   const [date, setDate] = useState(new Date())
-  const [sourceMetadata, setSourceMetadata] = useState({
+  const [source, setSource] = useState({
     title: "",
     authors: "",
     sourceLink: "",
   })
 
-  const handleSourceMetadataChange = (event) => {
+  const handleSave = (event) => {
+    const newSource = {
+      title: source.title,
+      authors: source.authors,
+      sourceLink: source.sourceLink,
+      date: date
+    }
+
+    const newSources = [...sources, newSource]
+
+    const fileData = JSON.stringify(newSources);
+    const blob = new Blob([fileData], {type: "text/plain"});
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.download = 'sources.json';
+    link.href = url;
+    link.click();
+  }
+  
+  const handleSourceChange = (event) => {
     event.persist()
-    setSourceMetadata(sourceMetadata => ({ ...sourceMetadata, [event.target.name]: event.target.value }))
+    setSource(source => ({ ...source, [event.target.name]: event.target.value }))
     
     // Debugging
     console.log(event.target.name + ": " + event.target.value)
-  }
-
-  const handleDateChange = (event) => {
-    setDate(event.value)
   }
 
   return (
     <div style={{ marginLeft: "100px" }}>
       <RenderSampleStringGroup />
       <RenderForm
-        sourceMetadata={ sourceMetadata }
-        handleSourceMetadataChange= { (event) => handleSourceMetadataChange(event) }
+        source={ source }
+        handleSourceChange= { (event) => handleSourceChange(event) }
         date={ date }
         setDate={ setDate }
+        handleSave={ (event) => handleSave(event) }
       />
     </div>
   )
