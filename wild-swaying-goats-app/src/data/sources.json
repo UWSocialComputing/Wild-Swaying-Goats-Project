@@ -1,9 +1,9 @@
 [
     {
-    "title": "title1",
-    "authors": "author1, author2, author3",
-    "sourceLink": "www.google.com",
-    "date": "2000-01-01"
+        "title": "title1",
+        "authors": "author1, author2, author3",
+        "sourceLink": "www.google.com",
+        "date": "2000-01-01"
     },
     {
         "title": "title2",
