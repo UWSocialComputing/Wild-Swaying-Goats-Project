@@ -9,7 +9,7 @@ export default function Source(props){
         <Button variant="text" href={props.link} target="_blank">
             <List>
                 <ListItem>
-                    <ListItemText primary={props.displayText} secondary={props.author}/>
+                    <ListItemText primary={props.displayText} secondary={[props.author, " ", props.date]}/>
                 </ListItem>
             </List>
         </Button>

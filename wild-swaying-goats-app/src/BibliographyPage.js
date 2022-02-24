@@ -15,11 +15,11 @@ function createData(source, score) {
 }
 
 const rows = [
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.6}/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.8}/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.2}/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={5.0}/>),
-  createData(<Source displayText={"Title"} author={"Author"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={4.5}/>)
+  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.6}/>),
+  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.8}/>),
+  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.2}/>),
+  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={5.0}/>),
+  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={4.5}/>)
 ];
 
 const Item = styled(Paper)(({ theme }) => ({
