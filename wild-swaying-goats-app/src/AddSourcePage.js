@@ -108,23 +108,6 @@ function RenderForm(props) {
         </Grid>
         <Grid container spacing={5} style={{ marginTop: "15px" }}>
           <Grid item>
-            <TextField
-              style={{ width: 500 }}
-              multiline={ true }
-              rows={ 9 }
-              id="quote"
-              label="Quote"
-              name="quote"
-              value={ source.quote }
-              placeholder={ "Insert Quote (max. 450 characters)" }
-              onChange={ (event) => props.handleSourceChange(event) }
-              inputProps={{ maxLength: 450 }}
-              InputLabelProps={{ shrink: true }}
-              variant="outlined"
-            />
-          </Grid>
-          <Grid container spacing={5} style={{ marginTop: "15px" }}>
-          <Grid item>
             <FormControl>
               <InputLabel id="sideLabel" variant="outlined">Source Side</InputLabel>
               <Select
@@ -141,6 +124,23 @@ function RenderForm(props) {
               </Select>
             </FormControl>
           </Grid>
+        </Grid>
+        <Grid container spacing={5} style={{ marginTop: "15px" }}>
+          <Grid item>
+            <TextField
+              style={{ width: 500 }}
+              multiline={ true }
+              rows={ 9 }
+              id="quote"
+              label="Quote"
+              name="quote"
+              value={ source.quote }
+              placeholder={ "Insert Quote (max. 450 characters)" }
+              onChange={ (event) => props.handleSourceChange(event) }
+              inputProps={{ maxLength: 450 }}
+              InputLabelProps={{ shrink: true }}
+              variant="outlined"
+            />
           </Grid>
           <Grid container spacing={5} style={{ marginTop: "15px", alignItems: "center", justify: "center" }}>
             <Grid item>
