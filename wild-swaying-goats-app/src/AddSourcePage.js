@@ -34,15 +34,17 @@ function RenderForm(props) {
         </Grid>
         <Grid container spacing={5} style={{ marginTop: "15px" }}>
           <Grid item>
-            <FormControl>
-              <InputLabel id="selectSourceTypeLabel">Source Type</InputLabel>
+            <FormControl fullWidth>
+              <InputLabel id="selectSourceTypeLabel" variant="outlined">Source Type</InputLabel>
               <Select
+                labelId="selectSourceTypeLabel"
                 style={{ width: 500 }}
                 id="sourceType"
                 name="sourceType"
                 value={ source.sourceType }
                 label="Source Type"
                 onChange={ (event) => props.handleSourceChange(event) }
+                variant="outlined"
               >
                 <MenuItem value={"Book"}>Book</MenuItem>
                 <MenuItem value={"Journal"}>Journal</MenuItem>
@@ -124,7 +126,7 @@ function RenderForm(props) {
           <Grid container spacing={5} style={{ marginTop: "15px" }}>
           <Grid item>
             <FormControl>
-              <InputLabel id="sideLabel">Source Side</InputLabel>
+              <InputLabel id="sideLabel" variant="outlined">Source Side</InputLabel>
               <Select
                 style={{ width: 500 }}
                 id="side"
@@ -132,6 +134,7 @@ function RenderForm(props) {
                 value={ source.side }
                 label="Source Type"
                 onChange={ (event) => props.handleSourceChange(event) }
+                variant="outlined"
               >
                 <MenuItem value={0}>Side 1: Something something</MenuItem>
                 <MenuItem value={1}>Side 2: Something that isn't something</MenuItem>
@@ -169,7 +172,7 @@ function AddSourceForm() {
     authors: "",
     sourceLink: "",
     quote: "",
-    side: 0
+    side: undefined
   })
 
   const handleSave = (event) => {
