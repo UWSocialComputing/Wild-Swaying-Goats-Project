@@ -119,8 +119,8 @@ function RenderForm(props) {
                 onChange={ (event) => props.handleSourceChange(event) }
                 variant="outlined"
               >
-                <MenuItem value={0}>Side 1: Something something</MenuItem>
-                <MenuItem value={1}>Side 2: Something that isn't something</MenuItem>
+                <MenuItem value={0}>{"Side 1: " + props.side1}</MenuItem>
+                <MenuItem value={1}>{"Side 2: " + props.side2}</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -163,7 +163,7 @@ function RenderForm(props) {
 // Parent Component
 // This is where we should keep ALL
 // of our variables
-function AddSourceForm() {
+function AddSourceForm(props) {
 
   const [date, setDate] = useState(new Date())
   const [source, setSource] = useState({
@@ -210,6 +210,8 @@ function AddSourceForm() {
         date={ date }
         setDate={ setDate }
         handleSave={ (event) => handleSave(event) }
+        side1={props.side1}
+        side2={props.side2}
       />
     </div>
   )
@@ -219,11 +221,11 @@ function AddSourceForm() {
 // When App.js want to render the Add Source page, 
 // it will import this function and "render" it
 // We render the parent component here
-export default function AddSourcePage() {
+export default function AddSourcePage(props) {
 
   return (
     <div className="App">
-      <AddSourceForm/>
+      <AddSourceForm side1={props.side1} side2={props.side2}/>
     </div>
   );
 }

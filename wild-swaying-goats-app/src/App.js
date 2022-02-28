@@ -27,7 +27,7 @@ function App() {
     return(
       <>
       <Route path={i.url} element={<BibliographyPage url={i.url} store={store} dispatch={dispatch}/>} />
-      <Route path={i.url + "/add-source"} element={<AddSourcePage />}/>
+      <Route path={i.url + "/add-source"} element={<AddSourcePage side1={i.data.side1} side2={i.data.side2}/>}/>
       </>
     );
   });
