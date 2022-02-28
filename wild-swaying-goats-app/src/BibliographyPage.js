@@ -74,7 +74,7 @@ export default function BibliograpyPage(props) {
         
         <Grid item xs={6}>
           <Item>
-            <Button backgroundColor="#b4c5ed" href="/add-source">
+            <Button backgroundColor="#b4c5ed" href={props.url + "/add-source"}>
               Add New Source
             </Button>
           </Item>
@@ -82,7 +82,7 @@ export default function BibliograpyPage(props) {
 
         <Grid item xs={6}>
           <Item>
-            <Button backgroundColor="#b4c5ed" href="/add-source">
+            <Button backgroundColor="#b4c5ed" href={props.url + "/add-source"}>
               Add New Source
             </Button>
           </Item>
