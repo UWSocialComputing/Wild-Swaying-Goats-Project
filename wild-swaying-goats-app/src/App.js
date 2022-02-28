@@ -1,35 +1,42 @@
 import './App.css';
 import BibliographyPage from "./BibliographyPage";
 import AddSourcePage from "./AddSourcePage";
-import React from "react";
+import LandingPage from "./LandingPage";
+import React, { useReducer } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
-  // OLD APP STUFF FROM INIT
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
+  function reducer(state, action) {
+    switch(action.type) {
+      case 'ADD_DISCUSSION':
+        return { 
+          state
+        }
+      case 'ADD_SOURCE':
+        return { 
+          state
+        }
+      default:
+        return state
+    }
+  }
+
+  const [store, dispatch] = useReducer(reducer, require('./data/sources.json'));
+
+  let allRoutes = store.discussions.map(function(i) {
+    return(
+      <>
+      <Route path={i.url} element={<BibliographyPage url={i.url} store={store} dispatch={dispatch}/>} />
+      <Route path={i.url + "/add-source"} element={<AddSourcePage />}/>
+      </>
+    );
+  });
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<BibliographyPage />} />
-        <Route path="/add-source" element={<AddSourcePage />} />
+        <Route path="/" element={<LandingPage store={store}/>}/>
+        {allRoutes}
       </Routes>
     </Router>
   )

@@ -14,14 +14,6 @@ function createData(source, score) {
   return { source, score };
 }
 
-const rows = [
-  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.6}/>),
-  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.8}/>),
-  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={3.2}/>),
-  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={5.0}/>),
-  createData(<Source displayText={"Title"} author={"Author"} date={"12/15/2021"} link={"https://www.w3schools.com/howto/howto_js_redirect_webpage.asp"}/>, <SliderScore average={4.5}/>)
-];
-
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
@@ -30,8 +22,15 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-export default function BibliograpyPage() {
-  let data = require('./data/sources.json')[0];
+export default function BibliograpyPage(props) {
+  let store = props.store;
+  let discussions = store.discussions;
+  let data;
+  discussions.forEach((i) => {
+    if (i.url === props.url) {
+      data = i.data; 
+    }
+  })
   let discussionTitle = data.discussionTitle;
   let side1 = data.side1;
   let side2 = data.side2;
