@@ -7,7 +7,7 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import sources from "./data/sources.json";
 import { useNavigate } from 'react-router-dom';
 
-function RenderForm(props) {
+function RenderAddSourceForm(props) {
 
   let source = props.source
   let date = props.date
@@ -23,7 +23,7 @@ function RenderForm(props) {
               error={ sources.title === "" }
               helperText="Required"
               id="title"
-              label="Title"
+              label="Source Title"
               name="title"
               value={ sources.title }
               placeholder={ "Insert Source Title" }
@@ -207,15 +207,15 @@ function AddSourceForm(props) {
 
   return (
     <div style={{ marginLeft: "100px" }}>
-      <RenderForm
+      <RenderAddSourceForm
         source={ source }
         handleSourceChange= { (event) => handleSourceChange(event) }
         date={ date }
         setDate={ setDate }
         handleSave={ (event) => handleSave(event) }
-        url={props.url}
-        side1={props.side1}
-        side2={props.side2}
+        url={ props.url }
+        side1={ props.side1 }
+        side2={ props.side2 }
       />
     </div>
   )
