@@ -4,7 +4,6 @@ import { Button, Grid, TextField, Select, MenuItem, FormControl, InputLabel } fr
 import {Link} from "react-router-dom";
 import { LocalizationProvider, DatePicker } from "@mui/lab";
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import sources from "./data/sources.json";
 import { useNavigate } from 'react-router-dom';
 
 function RenderAddSourceForm(props) {
@@ -20,12 +19,12 @@ function RenderAddSourceForm(props) {
             <TextField
               style={{ width: 500 }}
               required
-              error={ sources.title === "" }
+              error={ source.title === "" }
               helperText="Required"
               id="title"
               label="Source Title"
               name="title"
-              value={ sources.title }
+              value={ source.title }
               placeholder={ "Insert Source Title" }
               onChange={ (event) => props.handleSourceChange(event) }
               InputLabelProps={{ shrink: true }}

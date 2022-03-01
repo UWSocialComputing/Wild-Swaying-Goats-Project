@@ -2,9 +2,6 @@ import "./App.css";
 import React, { useState } from "react";
 import { Button, Grid, TextField, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
 import {Link} from "react-router-dom";
-import { LocalizationProvider, DatePicker } from "@mui/lab";
-import AdapterDateFns from '@mui/lab/AdapterDateFns';
-import sources from "./data/sources.json";
 import { useNavigate } from 'react-router-dom';
 
 function RenderAddBibliographyForm(props) {
@@ -96,23 +93,20 @@ function AddBibliographyForm(props) {
   })
 
   const handleSave = (event) => {
-    // const newSource = {
-    //   title: source.title,
-    //   authors: source.authors,
-    //   sourceLink: source.sourceLink,
-    //   date: date.toLocaleDateString("en-US"),
-    //   average: 3.0
-    // }
+    const titleToUrl = (title) => {
+        var url = "/" + title.toLowerCase().split(" ").join("-")
 
-    // event.preventDefault();
-    // props.dispatch({
-    //   type: 'ADD_SOURCE',
-    //   url: props.url,
-    //   side: source.side + 1,
-    //   source: newSource
-    // });
+        return url
+    }
 
-    // navigate(props.url);
+    const newBibliograpghy = {
+        title: bibliography.title,
+        side1: bibliography.side1,
+        side2: bibliography.side2,
+        url: titleToUrl(bibliography.title)
+    }
+
+    console.log(newBibliograpghy)
   }
   
   const handleBibliographyChange = (event) => {

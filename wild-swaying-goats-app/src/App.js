@@ -4,10 +4,9 @@ import AddSourcePage from "./AddSourcePage";
 import AddBibliographyPage from "./AddBibliographyPage";
 import LandingPage from "./LandingPage";
 import React, { useReducer } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/core";
 import { createTheme } from '@material-ui/core/styles';
-import { Link } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
