@@ -4,6 +4,7 @@ import AddSourcePage from "./AddSourcePage";
 import LandingPage from "./LandingPage";
 import React, { useReducer } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/core";
 
 function App() {
   function reducer(state, action) {
@@ -40,10 +41,26 @@ function App() {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<LandingPage store={store}/>}/>
-        {allRoutes}
-      </Routes>
+      <MuiThemeProvider>
+        <AppBar id="appBar" position="absolute">
+          <Toolbar>
+            <Grid container  style={{ marginTop: "5px" }} spacing={24} justify="space-between">
+              <Grid item>
+                <h3> Wild Swaying Online Bibliography </h3>
+              </Grid>
+              <Grid item>
+                <Button variant="contained">
+                  Add New Bibliography
+                </Button>
+              </Grid>
+            </Grid>
+          </Toolbar>
+        </AppBar>
+        <Routes>
+          <Route path="/" element={<LandingPage store={store}/>}/>
+          {allRoutes}
+        </Routes>
+      </MuiThemeProvider>
     </Router>
   )
 }

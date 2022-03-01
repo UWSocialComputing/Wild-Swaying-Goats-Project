@@ -41,7 +41,7 @@ export default function BibliograpyPage(props) {
   
   let navigate = useNavigate();
   return (
-    <div style={{ marginLeft: "20px", marginRight: "20px", marginTop: "20px" }}>
+    <div style={{ marginLeft: "20px", marginRight: "20px", marginTop: "100px" }}>
       <Grid container p={2} spacing={2}>
         <Grid item xs={2}>
           <Item>
