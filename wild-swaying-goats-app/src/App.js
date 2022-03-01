@@ -9,15 +9,21 @@ function App() {
   function reducer(state, action) {
     switch(action.type) {
       case 'ADD_DISCUSSION':
-        return { 
-          state
-        }
+        state.discussions.add(action);
+        return state;
       case 'ADD_SOURCE':
-        return { 
-          state
-        }
+        let sideString = "side" + action.side + "Sources";
+        let discussionData;
+        state.discussions.forEach((i) => {
+          if (i.url === action.url) {
+            discussionData = i.data; 
+          }
+        })
+        let sideSources = discussionData[sideString];
+        sideSources.push(action.source);
+        return state;
       default:
-        return state
+        return state;
     }
   }
 
@@ -27,7 +33,7 @@ function App() {
     return(
       <>
       <Route path={i.url} element={<BibliographyPage url={i.url} store={store} dispatch={dispatch}/>} />
-      <Route path={i.url + "/add-source"} element={<AddSourcePage side1={i.data.side1} side2={i.data.side2}/>}/>
+      <Route path={i.url + "/add-source"} element={<AddSourcePage url={i.url} side1={i.data.side1} side2={i.data.side2} store={store} dispatch={dispatch}/>}/>
       </>
     );
   });

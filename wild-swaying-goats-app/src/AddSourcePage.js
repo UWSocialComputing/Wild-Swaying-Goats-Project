@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import { LocalizationProvider, DatePicker } from "@mui/lab";
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import sources from "./data/sources.json";
+import { useNavigate } from 'react-router-dom';
 
 function RenderForm(props) {
 
@@ -164,6 +165,7 @@ function RenderForm(props) {
 // This is where we should keep ALL
 // of our variables
 function AddSourceForm(props) {
+  let navigate = useNavigate();
 
   const [date, setDate] = useState(new Date())
   const [source, setSource] = useState({
@@ -180,18 +182,19 @@ function AddSourceForm(props) {
       title: source.title,
       authors: source.authors,
       sourceLink: source.sourceLink,
-      date: date
+      date: date.toLocaleDateString("en-US"),
+      average: 3.0
     }
 
-    const newSources = [...sources, newSource]
+    event.preventDefault();
+    props.dispatch({
+      type: 'ADD_SOURCE',
+      url: props.url,
+      side: source.side + 1,
+      source: newSource
+    });
 
-    const fileData = JSON.stringify(newSources);
-    const blob = new Blob([fileData], {type: "text/plain"});
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.download = 'sources.json';
-    link.href = url;
-    link.click();
+    navigate(props.url);
   }
   
   const handleSourceChange = (event) => {
@@ -225,7 +228,7 @@ export default function AddSourcePage(props) {
 
   return (
     <div className="App">
-      <AddSourceForm side1={props.side1} side2={props.side2}/>
+      <AddSourceForm url={props.url} side1={props.side1} side2={props.side2} store={props.store} dispatch={props.dispatch}/>
     </div>
   );
 }
