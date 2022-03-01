@@ -145,14 +145,14 @@ function RenderForm(props) {
           </Grid>
           <Grid container spacing={5} style={{ marginTop: "15px", alignItems: "center", justify: "center" }}>
             <Grid item>
-              <Link to="/">
-                  <Button>
-                      Cancel
-                  </Button>
-                  <Button onClick={ (event) => props.handleSave(event) }>
-                      Save
-                  </Button>
+              <Link to={props.url}>
+                <Button>
+                    Cancel
+                </Button>
               </Link>
+              <Button onClick={ (event) => props.handleSave(event) }>
+                  Save
+              </Button>
             </Grid>
           </Grid>
         </Grid>
@@ -213,6 +213,7 @@ function AddSourceForm(props) {
         date={ date }
         setDate={ setDate }
         handleSave={ (event) => handleSave(event) }
+        url={props.url}
         side1={props.side1}
         side2={props.side2}
       />
