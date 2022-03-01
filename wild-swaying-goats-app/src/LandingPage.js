@@ -1,26 +1,24 @@
 import {Link} from 'react-router-dom';
-import ContrastIcon from '@mui/icons-material/Contrast';
-import Grid from "@mui/material/Grid";
+import { Box, Grid, Card, CardContent } from "@mui/material";
 
 export default function LandingPage(props) {
   
   let navLinks = props.store.discussions.map(function(i) {
     return(
-      <Grid item container direction="row">
-        <Grid item>
-          <ContrastIcon/>
-        </Grid>
-        <Grid item style={{ marginLeft: "10px" }}>
-          <h3>
-            <Link to={i.url}>{i.data.discussionTitle}</Link>
-          </h3>
-        </Grid>
-      </Grid>
+      <Box style={{ marginLeft: "100px" }} sx={{ width: 2075 }}>
+        <Card variant="outlined" style={{ marginTop: "20px" }}>
+          <CardContent style={{ marginTop: "15px" }}>
+            <h3>
+              <Link to={i.url}>{i.data.discussionTitle}</Link>
+            </h3>
+          </CardContent>
+        </Card>
+      </Box>
     );
   });
 
   return (
-    <Grid container style={{ marginLeft: "15px", marginTop: "100px" }} direction="column" columnSpacing={9}>
+    <Grid container style={{ marginTop: "100px" }} direction="column" columnSpacing={9}>
       {navLinks}
     </Grid >
   );
