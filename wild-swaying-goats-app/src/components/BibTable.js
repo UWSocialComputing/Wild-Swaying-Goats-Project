@@ -4,24 +4,10 @@ import {
     TableRow, 
     TableCell, 
     TableBody, 
-    Table,
-    Button
+    Table
   } from "@material-ui/core";
 
 export default function BibTable(props) {
-
-  function RenderVoteButton(props) {
-    
-    const onClick = (event) => {
-      console.log("clicked!")
-    }
-    
-    return (
-      <Button variant="contained" onClick={onClick}>
-        Vote
-      </Button>
-    )
-  }
 
   return(
       <Table sx={{ minWidth: 250 }} aria-label="simple table">
@@ -38,10 +24,7 @@ export default function BibTable(props) {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell style={{ width: "60%" }} align="left">{row.source}</TableCell>
-              <TableCell style={{ width: "20%" }} align="left">{row.score}</TableCell>
-              <TableCell style={{ width: "20%" }} align="right">
-                <RenderVoteButton/>
-              </TableCell>
+              <TableCell style={{ width: "25%" }} align="left">{row.score}</TableCell>
             </TableRow>
           ))}
         </TableBody>

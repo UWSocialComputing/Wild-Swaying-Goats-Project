@@ -36,8 +36,8 @@ export default function BibliograpyPage(props) {
   let discussionTitle = data.discussionTitle;
   let side1 = data.side1;
   let side2 = data.side2;
-  let side1Sources = data.side1Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore scores={i.scores} average={i.average}/>)});
-  let side2Sources = data.side2Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore scores={i.scores} average={i.average}/>)});
+  let side1Sources = data.side1Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore title={i.title} scores={i.scores} average={i.average} dispatch={props.dispatch}/>)});
+  let side2Sources = data.side2Sources.map(function(i) {return createData(<Source displayText={i.title} author={i.authors} link={i.sourceLink} date={i.date}/>, <SliderScore title={i.title} scores={i.scores} average={i.average} dispatch={props.dispatch}/>)});
   
   let navigate = useNavigate();
   return (
