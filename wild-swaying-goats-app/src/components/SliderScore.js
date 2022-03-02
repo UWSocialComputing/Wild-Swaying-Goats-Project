@@ -3,16 +3,23 @@ import Slider from "@mui/material/Slider"
 import { styled } from '@mui/material/styles';
 
 export default function SliderScore(props) {
-  let scores = [3]
 
-  function getAverage(scores) {
-    
+  function handleSave() {
+
+  }
+
+  function getAverage() {
+    let total = 0
+    for (const score of props.scores) {
+      total += score
+    }
+    return total / props.scores.length
   }
 
   const avg = [
     {
-      value: props.average,
-      label: props.average
+      value: getAverage(),
+      label: getAverage()
     }
   ]
 
@@ -79,6 +86,8 @@ export default function SliderScore(props) {
             marks={avg}
             min={1}
             max={5}
+            onChange={}
+            onChangeCommitted={handleSave()}
             />
     );
 }
