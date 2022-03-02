@@ -9,13 +9,13 @@
                 "side1Sources":[
                     {
                         "title": "Drake Equation",
-                        "authors": "",
+                        "authors": "Multiple",
                         "sourceLink": "https://en.wikipedia.org/wiki/Drake_equation",
-                        "date": "",
+                        "date": "2022-02-17",
                         "average": 4.5,
                         "scores": [3],
                         "type": "Other",
-                        "quote": "",
+                        "quote": "Drake equation is a probabilistic argument used to estimate the number of active, communicative extraterrestrial civilizations in the Milky Way Galaxy.",
                         "voted": false
                     },
                     {
@@ -25,8 +25,8 @@
                         "date": "2016-05-13",
                         "average": 4.8,
                         "scores": [3],
-                        "type": "Other",
-                        "quote": "",
+                        "type": "Article",
+                        "quote": "(Authors) address the cosmic frequency of technological species (utilizing the Drake equation)",
                         "voted": false
                     },
                     {
@@ -36,21 +36,21 @@
                         "date": "2022-02-07",
                         "average": 3.6,
                         "scores": [3],
-                        "type": "Other",
-                        "quote": "",
+                        "type": "Blog",
+                        "quote": "(Idea) that our universe didn't emerge from a single point, or anything like it. Rather, it bounced into expansion … from a pre-existing universe that had been contracting.",
                         "voted": false
                     }
                 ],
                 "side2Sources":[
                     {
                         "title": "Fermi Paradox",
-                        "authors": "",
+                        "authors": "UOregon Cosmology Professor Schombert",
                         "sourceLink": "http://abyss.uoregon.edu/~js/cosmo/lectures/lec28.html",
                         "date": "",
                         "average": 4.5,
                         "scores": [3],
                         "type": "Other",
-                        "quote": "",
+                        "quote": "Fermi's paradox has two components; 1) why haven't the aliens visited us? and 2) why have we not detected their communications/evidence of their energy output?",
                         "voted": false
                     },
                     {
@@ -60,8 +60,8 @@
                         "date": "2019-07-08",
                         "average": 3.6,
                         "scores": [3],
-                        "type": "Other",
-                        "quote": "",
+                        "type": "Wikipedia",
+                        "quote": "An appeal to probability argues that, because something probably will happen, it is certain to happen.",
                         "voted": false
                     }
                 ]
@@ -75,31 +75,155 @@
                 "side2": "Dogs are Smarter",
                 "side1Sources":[
                     {
-                        "title": "Drake Equation",
-                        "authors": "",
-                        "sourceLink": "https://en.wikipedia.org/wiki/Drake_equation",
+                        "title": "How Smart are Cats?",
+                        "authors": "Purnia Society",
+                        "sourceLink": "https://www.purina.eu/cats/behaviour-and-training/understanding-cat-behaviour/how-smart-are-cats",
                         "date": "",
-                        "average": 4.5,
+                        "average": 2.5,
                         "scores": [3],
-                        "type": "Other",
-                        "quote": "",
+                        "type": "Blog",
+                        "quote": "...cats also possess more nerve cells in the visual areas of their brain than humans and most other mammals",
+                        "voted": false
+                    },
+                    {
+                        "title": "Just How Smart Are Cats?",
+                        "authors": "Christine O'Brien",
+                        "sourceLink": "https://www.hillspet.com/cat-care/behavior-appearance/how-smart-are-cats",
+                        "date": "2017-12-05",
+                        "average": 3.5,
+                        "scores": [3],
+                        "type": "Blog",
+                        "quote": "...each part of a cat's brain is compartmentalized, specialized and connected to the others, allowing cats to understand, respond to and even manipulate their surroundings.",
                         "voted": false
                     }
                 ],
                 "side2Sources":[
                     {
-                        "title": "Fermi Paradox",
-                        "authors": "",
-                        "sourceLink": "http://abyss.uoregon.edu/~js/cosmo/lectures/lec28.html",
-                        "date": "",
+                        "title": "Are Dogs Smarter Than Cats? Science Has an Answer",
+                        "authors": "Sarah Gibbens",
+                        "sourceLink": "https://www.nationalgeographic.com/animals/article/dog-cat-brains-neurons-intelligence-study-spd",
+                        "date": "2017-11-30",
+                        "average": 4.5,
+                        "scores": [3],
+                        "type": "Article",
+                        "quote": "A team of researchers counted the number of neurons in dog and cat brains and found one had twice as many as the other.",
+                        "voted": false
+                    },
+                    {
+                        "title": "Why scientists believe dogs are smarter than we give them credit for",
+                        "authors": "Joseph Stromberg",
+                        "sourceLink": "https://www.vox.com/2015/4/7/8360143/dogs-intelligence-science",
+                        "date": "2016-01-22",
+                        "average": 4.5,
+                        "scores": [3],
+                        "type": "Article",
+                        "quote": "...psychologist and dog researcher Stanley Coren estimates, the average dog's intelligence is roughly as sophisticated as a 2.5-year-old baby's.",
+                        "voted": false
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/is-banning-books-wrong",
+            "data": {
+                "discussionTitle": "Is Banning Books Wrong?",
+                "side1": "No, Ban some books",
+                "side2": "Yes, Don’t ban any books",
+                "side1Sources":[
+                    {
+                        "title": "Why are parents banning school books?",
+                        "authors": "Finlo Rohrer",
+                        "sourceLink": "https://www.bbc.com/news/magazine-11417672",
+                        "date": "2010-09-27",
+                        "average": 3.0,
+                        "scores": [3],
+                        "type": "Magazine",
+                        "quote": "Harper Lee's book has been challenged by black parents who object to the use of the …(n-word). It appears 58 times in the book, notes Ms Jones. (testimonies from concerned parents)",
+                        "voted": false
+                    }
+                ],
+                "side2Sources":[
+                    {
+                        "title": "Banned Books: Reasons Books are Challenged",
+                        "authors": "Butler University Libraries",
+                        "sourceLink": "https://libguides.butler.edu/bannedbooks?p=217686",
+                        "date": "2021-04-17",
+                        "average": 3.5,
+                        "scores": [3],
+                        "type": "Blog",
+                        "quote": "Many books have been banned or censored in one or more of these categories due to a misjudgment or misunderstanding about the books contents and message (provides stats on challenges)",
+                        "voted": false
+                    },
+                    {
+                        "title": "Why are books banned or challenged?",
+                        "authors": "St. Clair County Community College Library",
+                        "sourceLink": "https://esearch.sc4.edu/banned/why",
+                        "date": "2022-01-31",
+                        "average": 2.5,
+                        "scores": [3],
+                        "type": "Other",
+                        "quote": "The ALA (American Library Association) condemns censorship and works to ensure free access to information",
+                        "voted": false
+                    }
+                ]
+            }
+        },
+        {
+            "url": "/should-everyone-be-vegan",
+            "data": {
+                "discussionTitle": "Should everyone be Vegan?",
+                "side1": "Veganism FTW!!",
+                "side2": "No",
+                "side1Sources":[
+                    {
+                        "title": "Future is vegan",
+                        "authors": "David Edward Raj",
+                        "sourceLink": "https://www.deccanherald.com/living/health-and-well-being/future-is-vegan-874467.html",
+                        "date": "2020-08-18",
+                        "average": 3.2,
+                        "scores": [3],
+                        "type": "Blog",
+                        "quote": "It has been found that cutting down on meat and dairy products from your diet could reduce an individual’s carbon footprint.",
+                        "voted": false
+                    },
+                    {
+                        "title": "6 Science-Based Health Benefits of Eating Vegan",
+                        "authors": "Alina Petre",
+                        "sourceLink": "https://www.healthline.com/nutrition/vegan-diet-benefits",
+                        "date": "2021-05-20",
+                        "average": 4.2,
+                        "scores": [3],
+                        "type": "Blog",
+                        "quote": "...a vegan diet may help you maintain a healthy heart",
+                        "voted": false
+                    }
+                ],
+                "side2Sources":[
+                    {
+                        "title": "Plant-based diets are best… or are they?",
+                        "authors": "Robert H. Shmerling",
+                        "sourceLink": "https://www.health.harvard.edu/blog/plant-based-diets-are-best-or-are-they-2019103118122",
+                        "date": "2019-11-25",
+                        "average": 4.5,
+                        "scores": [3],
+                        "type": "Blog",
+                        "quote": "Vegetarians and vegans may have an increased risk of stroke (stats provided)",
+                        "voted": false
+                    },
+                    {
+                        "title": "Vegetarianism and veganism compared with mental health and cognitive outcomes: a systematic review and meta-analysis",
+                        "authors": "Isabel Iguacel, Inge Huybrechts, Luis A Moreno, Nathalie Michels",
+                        "sourceLink": "https://pubmed.ncbi.nlm.nih.gov/32483598/",
+                        "date": "2021-03-09",
                         "average": 4.5,
                         "scores": [3],
                         "type": "Other",
-                        "quote": "",
+                        "quote": "(this study found that) Vegan or vegetarian diets were related to a higher risk of depression and lower anxiety scores",
                         "voted": false
                     }
                 ]
             }
         }
+
     ]
 }
