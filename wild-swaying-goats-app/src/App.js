@@ -42,6 +42,24 @@ function App() {
         let sideSources = discussionData[sideString];
         sideSources.push(action.source);
         return state;
+      case 'VOTE':
+        let newVote = action.vote;
+        let sideString = "side" + action.side + "Sources";
+        let discussionData;
+        state.discussions.forEach((i) => {
+          if (i.url === action.url) {
+            discussionData = i.data; 
+          }
+        })
+        let sideSources = discussionData[sideString];
+        let sourceScores;
+        sideSources.forEach((source) => {
+          if (source.title === action.title) {
+            sourceScores = source.scores;
+          }
+        })
+        sourceScores.push(newVote)
+        return state;
       default:
         return state;
     }
