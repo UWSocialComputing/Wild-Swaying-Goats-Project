@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import { Button, Grid, TextField, Select, MenuItem, FormControl, InputLabel } from "@material-ui/core";
+import { Button, Grid, TextField } from "@material-ui/core";
 import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
@@ -99,14 +99,25 @@ function AddBibliographyForm(props) {
         return url
     }
 
+    let newUrl = titleToUrl(bibliography.title);
     const newBibliograpghy = {
-        title: bibliography.title,
-        side1: bibliography.side1,
-        side2: bibliography.side2,
-        url: titleToUrl(bibliography.title)
+        url: newUrl,
+        data: {
+          discussionTitle: bibliography.title,
+          side1: bibliography.side1,
+          side2: bibliography.side2,
+          side1Sources: [],
+          side2Sources: [],
+        }
     }
 
-    console.log(newBibliograpghy)
+    event.preventDefault();
+    props.dispatch({
+      type: 'ADD_BIBLIOGRAPHY',
+      newBib: newBibliograpghy
+    });
+
+    navigate(props.url);
   }
   
   const handleBibliographyChange = (event) => {

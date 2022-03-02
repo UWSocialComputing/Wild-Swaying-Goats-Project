@@ -3,7 +3,7 @@ import BibliographyPage from "./BibliographyPage";
 import AddSourcePage from "./AddSourcePage";
 import AddBibliographyPage from "./AddBibliographyPage";
 import LandingPage from "./LandingPage";
-import React, { useReducer } from "react";
+import React, { useReducer, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/core";
 import { createTheme } from '@material-ui/core/styles';
@@ -17,17 +17,19 @@ const theme = createTheme({
           main: "#ffffff"
       }
   },
-  typography: {
-      fontSize: 12,
-      fontFamily: "Montserrat"
-  }
+  // typography: {
+  //     fontSize: 12,
+  //     fontFamily: "Montserrat"
+  // }
 });
 
 function App() {
   function reducer(state, action) {
     switch(action.type) {
-      case 'ADD_DISCUSSION':
-        state.discussions.add(action);
+      case 'ADD_BIBLIOGRAPHY':
+        if (!state.discussions.includes(action.newBib)) {
+          state.discussions.push(action.newBib);
+        }
         return state;
       case 'ADD_SOURCE':
         let sideString = "side" + action.side + "Sources";
@@ -46,6 +48,8 @@ function App() {
   }
 
   const [store, dispatch] = useReducer(reducer, require('./data/sources.json'));
+
+  const [count, setCount] = useState(0);
 
   let allRoutes = store.discussions.map(function(i) {
     return(
@@ -81,10 +85,16 @@ function App() {
           <Route path="/" element={<LandingPage store={store}/>}/>
           <Route path="/add-bibliography" element={<AddBibliographyPage store={store} dispatch={dispatch} url={"/"}/>}/>
           {allRoutes}
+          <Route path="*" element={<Loading store={store} count={count} setCount={setCount}/>}/>
         </Routes>
       </MuiThemeProvider>
     </Router>
-  )
+  );
+}
+
+function Loading(props) {
+  props.setCount(props.state+1);
+  return null;
 }
 
 export default App;

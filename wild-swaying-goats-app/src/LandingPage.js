@@ -5,7 +5,7 @@ export default function LandingPage(props) {
   
   let navLinks = props.store.discussions.map(function(i) {
     return(
-      <Box key={i.url} style={{ marginLeft: "100px" }} sx={{ width: 2075 }}>
+      <Box key={i.url} style={{ marginLeft: "100px", marginRight: "25px" }}>
         <Card variant="outlined" style={{ marginTop: "20px" }}>
           <CardContent style={{ marginTop: "15px" }}>
             <h3>
