@@ -21,7 +21,7 @@ function RenderAddBibliographyForm(props) {
                 label="Bibliography Title"
                 name="title"
                 value={ bibliography.title }
-                placeholder={ "Insert Source Title" }
+                placeholder={ "Insert Bibliography Title" }
                 onChange={ (event) => props.handleBibliographyChange(event) }
                 InputLabelProps={{ shrink: true }}
                 variant="outlined"
