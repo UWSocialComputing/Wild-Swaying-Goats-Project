@@ -45,7 +45,7 @@ export default function BibliograpyPage(props) {
       <Grid container p={2} spacing={2}>
         <Grid item xs={2}>
           <Item>
-            <Button backgroundColor="#b4c5ed" onClick={() => {
+            <Button onClick={() => {
               navigate("/");
             }}>
               Go Home
@@ -87,7 +87,7 @@ export default function BibliograpyPage(props) {
         
         <Grid item xs={12}>
           <Item>
-            <Button backgroundColor="#b4c5ed" onClick={() => {
+            <Button onClick={() => {
               navigate(props.url + "/add-source");
             }}>
               Add New Source
