@@ -12,21 +12,21 @@
                         "authors": "",
                         "sourceLink": "https://en.wikipedia.org/wiki/Drake_equation",
                         "date": "",
-                        "average": 4.5
+                        "scores": [3]
                     },
                     {
                         "title": "A New Empirical Constraint on the Prevalence of Technological Species in the Universe",
                         "authors": "Frank A., Sullivan W.T.",
                         "sourceLink": "https://www.liebertpub.com/doi/pdf/10.1089/ast.2015.1418",
                         "date": "2016-05-13",
-                        "average": 4.8
+                        "scores": [3]
                     },
                     {
                         "title": "The Big Bang: What really happened at our universe's birth?",
                         "authors": "Wall M",
                         "sourceLink": "https://www.space.com/13347-big-bang-origins-universe-birth.html",
                         "date": "2022-02-07",
-                        "average": 3.6
+                        "scores": [3]
                     }
                 ],
                 "side2Sources":[
@@ -35,14 +35,14 @@
                         "authors": "",
                         "sourceLink": "http://abyss.uoregon.edu/~js/cosmo/lectures/lec28.html",
                         "date": "",
-                        "average": 4.5
+                        "scores": [3]
                     },
                     {
                         "title": "Appeal to Probability",
                         "authors": "",
                         "sourceLink": "https://rationalwiki.org/wiki/Appeal_to_probability",
                         "date": "2019-07-08",
-                        "average": 3.6
+                        "scores": [3]
                     }
                 ]
             }
@@ -59,7 +59,7 @@
                         "authors": "",
                         "sourceLink": "https://en.wikipedia.org/wiki/Drake_equation",
                         "date": "",
-                        "average": 4.5
+                        "scores": [3]
                     }
                 ],
                 "side2Sources":[
@@ -68,7 +68,7 @@
                         "authors": "",
                         "sourceLink": "http://abyss.uoregon.edu/~js/cosmo/lectures/lec28.html",
                         "date": "",
-                        "average": 4.5
+                        "scores": [3]
                     }
                 ]
             }
