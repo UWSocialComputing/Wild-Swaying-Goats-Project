@@ -7,7 +7,7 @@ import React, { useReducer, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/core";
 import { createTheme } from '@material-ui/core/styles';
-import logo from './resources/logo.png';
+import logo from './resources/logo-modified.png';
 
 const theme = createTheme({
   palette: {
