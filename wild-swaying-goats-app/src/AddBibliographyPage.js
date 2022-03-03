@@ -94,9 +94,9 @@ function AddBibliographyForm(props) {
 
   const handleSave = (event) => {
     const titleToUrl = (title) => {
-        var url = "/" + title.toLowerCase().split(" ").join("-")
+        var url = "/" + title.toLowerCase().split(" ").join("-");
 
-        return url
+        return url;
     }
 
     let newUrl = titleToUrl(bibliography.title);
@@ -111,6 +111,7 @@ function AddBibliographyForm(props) {
         }
     }
 
+    // Update the store to include the new bibliography
     event.preventDefault();
     props.dispatch({
       type: 'ADD_BIBLIOGRAPHY',
