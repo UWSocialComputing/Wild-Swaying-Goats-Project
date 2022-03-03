@@ -83,14 +83,17 @@ export default function BibliograpyPage(props) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={12}>
-          <Item>
-            <Button onClick={() => {
-              navigate(props.url + "/add-source");
-            }}>
+        <Grid item xs={12} align="center">
+            <Button 
+              color="primary"
+              variant="contained" 
+              onClick={() => {
+                navigate(props.url + "/add-source");
+              }}
+              style={{marginTop:"15px", marginBottom:"15px", padding:"10px 20px"}}
+            >
               Add New Source
             </Button>
-          </Item>
         </Grid>
       </Grid>
     </div>

@@ -189,6 +189,7 @@ function AddSourceForm(props) {
       voted: false
     }
 
+    // Update the store to include the new source
     event.preventDefault();
     props.dispatch({
       type: 'ADD_SOURCE',
@@ -203,9 +204,6 @@ function AddSourceForm(props) {
   const handleSourceChange = (event) => {
     event.persist()
     setSource(source => ({ ...source, [event.target.name]: event.target.value }))
-    
-    // Debugging
-    console.log(event.target.name + ": " + event.target.value)
   }
 
   return (
