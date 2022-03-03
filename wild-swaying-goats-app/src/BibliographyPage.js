@@ -12,6 +12,7 @@ import {
   Divider
 } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 function createData(source, score) {
   return { source, score };
@@ -45,17 +46,17 @@ export default function BibliograpyPage(props) {
   return (
     <div style={{ marginLeft: "20px", marginRight: "20px", marginTop: "100px" }}>
       <Grid container p={2} spacing={2}>
-        <Grid item xs={2}>
-          <Item>
-            <Button onClick={() => {
-              navigate("/");
-            }}>
-              Go Home
-            </Button>
-          </Item>
-        </Grid>
         <Grid item xs={12}>
-          <Typography variant="h2" align="center" gutterBottom>
+          <Button
+            size="large"
+            startIcon={ <ArrowBackIosIcon /> }
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            Back
+          </Button>
+          <Typography variant="h3" align="center" gutterBottom>
             {discussionTitle}
           </Typography>
         </Grid>
