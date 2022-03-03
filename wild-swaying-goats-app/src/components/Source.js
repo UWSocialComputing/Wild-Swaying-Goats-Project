@@ -1,17 +1,33 @@
 import React from "react";
-import Button from '@mui/material/Button';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
+import Link from '@mui/material/Link';
 
 export default function Source(props){
     return (
-        <Button variant="text" href={props.link} target="_blank">
-            <List>
-                <ListItem>
-                    <ListItemText primary={props.displayText} secondary={[props.author, " ", props.date]}/>
-                </ListItem>
-            </List>
-        </Button>
+        <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
+            <Box sx={{ my: 3, mx: 2 }}>
+                <Grid container alignItems="center">
+                    <Link variant="h5" href={props.link} target="_blank" rel="noopener">
+                        {props.displayText}
+                    </Link>
+                </Grid>
+                <Grid item>
+                    <Typography color="text.secondary" variant="body2" style={{marginTop:"10px"}}>
+                        {props.author}
+                    </Typography>
+                    <Typography color="text.secondary" variant="body2">
+                        {props.date}
+                    </Typography>
+                    <Typography color="text.secondary" variant="body2">
+                        {props.type}
+                    </Typography>
+                    <Typography color="text.secondary" variant="subtitle2" style={{marginTop:"10px"}}>
+                        {"\"" + props.quote + "\""}
+                    </Typography>
+                </Grid>
+            </Box>
+        </Box>
     );
 }

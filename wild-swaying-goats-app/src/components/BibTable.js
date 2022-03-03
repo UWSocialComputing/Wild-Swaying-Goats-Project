@@ -14,7 +14,7 @@ export default function BibTable(props) {
         <TableHead>
           <TableRow>
             <TableCell style={{ width: "60%" }} align="left">Source</TableCell>
-            <TableCell style={{ width: "20%" }} align="left">Quality</TableCell>
+            <TableCell style={{ width: "40%" }} align="center">Quality</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
