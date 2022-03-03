@@ -9,7 +9,7 @@ export default function Source(props){
         <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>
             <Box sx={{ my: 3, mx: 2 }}>
                 <Grid container alignItems="center">
-                    <Link variant="h5" href={props.link} target="_blank" rel="noopener">
+                    <Link variant="h5" href={props.link} target="_blank" rel="noopener" underline="hover">
                         {props.displayText}
                     </Link>
                 </Grid>
