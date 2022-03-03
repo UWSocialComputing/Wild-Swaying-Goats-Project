@@ -4,6 +4,10 @@ import { Button, Grid, TextField } from "@material-ui/core";
 import {Link} from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 
+/*
+Form to take user input and save it to our json file to render a new bibliography on the landing page.
+*/
+
 function RenderAddBibliographyForm(props) {
 
   let bibliography = props.bibliography

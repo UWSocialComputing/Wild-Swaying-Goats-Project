@@ -1,6 +1,10 @@
 import {Link} from 'react-router-dom';
 import { Box, Grid, Card, CardContent } from "@mui/material";
 
+/*
+Landing page with all of the discussions in a table.
+*/
+
 export default function LandingPage(props) {
   
   let navLinks = props.store.discussions.map(function(i) {

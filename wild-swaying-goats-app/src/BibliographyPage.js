@@ -14,17 +14,13 @@ import {
 import { useNavigate } from "react-router-dom";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
+/*
+Populates the page with bibliography tables and sources.
+*/
+
 function createData(source, score) {
   return { source, score };
 }
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 export default function BibliograpyPage(props) {
   let store = props.store;

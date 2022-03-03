@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Button, Slider, Grid } from "@mui/material/";
 
+/*
+The slider and voting mechanism next to each source.
+*/
+
 function RenderVoteButton(props) {
 
   const [text, setText] = useState("Vote! ")
