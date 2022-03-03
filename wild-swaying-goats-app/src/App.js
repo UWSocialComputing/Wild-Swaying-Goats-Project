@@ -16,11 +16,7 @@ const theme = createTheme({
       secondary: {
           main: "#ffffff"
       }
-  },
-  // typography: {
-  //     fontSize: 12,
-  //     fontFamily: "Montserrat"
-  // }
+  }
 });
 
 function App() {

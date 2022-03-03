@@ -180,11 +180,16 @@ function AddSourceForm(props) {
     const newSource = {
       title: source.title,
       authors: source.authors,
-      sourceLink: source.sourceLink,
+      sourceLink: source.sourceLink.startsWith("http") ? source.sourceLink : "https://" + source.sourceLink,
       date: date.toLocaleDateString("en-US"),
-      average: 3.0
+      average: 3.0,
+      scores: [3],
+      type: source.sourceType,
+      quote: source.quote,
+      voted: false
     }
 
+    // Update the store to include the new source
     event.preventDefault();
     props.dispatch({
       type: 'ADD_SOURCE',
@@ -199,9 +204,6 @@ function AddSourceForm(props) {
   const handleSourceChange = (event) => {
     event.persist()
     setSource(source => ({ ...source, [event.target.name]: event.target.value }))
-    
-    // Debugging
-    console.log(event.target.name + ": " + event.target.value)
   }
 
   return (
