@@ -7,6 +7,7 @@ import React, { useReducer, useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/core";
 import { createTheme } from '@material-ui/core/styles';
+import logo from './resources/logo.png';
 
 const theme = createTheme({
   palette: {
@@ -88,7 +89,7 @@ function App() {
           <Toolbar>
             <Grid container  style={{ marginTop: "5px" }} justifyContent="space-between">
               <Grid item>
-                <img src="resources/logo.png" alt="Sussy Goat">
+                <img src={logo} alt="Sussy Goat" width="40" height="40"/>
               </Grid>
               <Grid item>
                 <h3> Wild Swaying Online Bibliography </h3>
