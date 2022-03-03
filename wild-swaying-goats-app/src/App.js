@@ -89,10 +89,13 @@ function App() {
           <Toolbar>
             <Grid container  style={{ marginTop: "5px" }} justifyContent="space-between">
               <Grid item>
-                <img src={logo} alt="Sussy Goat" width="40" height="40"/>
-              </Grid>
-              <Grid item>
-                <h3> Wild Swaying Online Bibliography </h3>
+                <div style={{display:"flex", flexDirection:"row"}}>
+                  <img src={logo} alt="Sussy Goat" width="40" height="40"/>
+                  <div style={{display:"flex", alignItems:"flex-end"}}>
+                    <h3 style={{marginLeft:"10px", marginRight:"10px", fontFamily:"monospace", fontSize:"25pt"}}>GOAT</h3>
+                    <h6 style={{alignSelf:"center", fontFamily:"monospace"}}>(Greatest Online Anti-misinformation Tables)</h6>
+                  </div>
+                </div>
               </Grid>
               <Grid item>
                 <Button variant="contained" component={Link} to={"/add-bibliography"}>
