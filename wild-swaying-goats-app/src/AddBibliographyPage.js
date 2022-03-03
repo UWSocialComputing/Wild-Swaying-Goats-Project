@@ -71,7 +71,7 @@ function RenderAddBibliographyForm(props) {
                     Cancel
                 </Button>
                 </Link>
-                <Button onClick={ (event) => props.handleSave(event) }>
+                <Button disabled={ bibliography.title === "" || bibliography.side1 === "" || bibliography.side2 === "" } onClick={ (event) => props.handleSave(event) }>
                     Save
                 </Button>
             </Grid>

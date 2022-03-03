@@ -149,7 +149,7 @@ function RenderAddSourceForm(props) {
                     Cancel
                 </Button>
               </Link>
-              <Button onClick={ (event) => props.handleSave(event) }>
+              <Button disabled={ source.title === "" } onClick={ (event) => props.handleSave(event) }>
                   Save
               </Button>
             </Grid>
