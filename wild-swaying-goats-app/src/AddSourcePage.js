@@ -180,7 +180,7 @@ function AddSourceForm(props) {
     const newSource = {
       title: source.title,
       authors: source.authors,
-      sourceLink: source.sourceLink,
+      sourceLink: source.sourceLink.startsWith("http") ? source.sourceLink : "https://" + source.sourceLink,
       date: date.toLocaleDateString("en-US"),
       average: 3.0,
       scores: [3],
