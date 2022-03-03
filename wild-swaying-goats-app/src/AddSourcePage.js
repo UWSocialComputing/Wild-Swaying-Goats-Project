@@ -182,7 +182,11 @@ function AddSourceForm(props) {
       authors: source.authors,
       sourceLink: source.sourceLink,
       date: date.toLocaleDateString("en-US"),
-      average: 3.0
+      average: 3.0,
+      scores: [3],
+      type: source.sourceType,
+      quote: source.quote,
+      voted: false
     }
 
     event.preventDefault();
