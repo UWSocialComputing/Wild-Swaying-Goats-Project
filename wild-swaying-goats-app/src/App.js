@@ -45,13 +45,20 @@ function App() {
       case 'VOTE':
         let newVote = action.voteScore;
         let sourceScores;
+        let disc;
         state.discussions.forEach((discussion) => {
-          discussion.forEach((side) => {
-            side.forEach((source) => {
-              if (source.title === action.title) {
-                sourceScores = source.scores;
-              }
-            })
+          disc = discussion.data;
+          let side1 = disc.side1Sources;
+          let side2 = disc.side2Sources;
+          side1.forEach((source) => {
+            if (source.title === action.title) {
+              sourceScores = source.scores;
+            }
+          })
+          side2.forEach((source) => {
+            if (source.title === action.title) {
+              sourceScores = source.scores;
+            }
           })
         })
         sourceScores.push(newVote)

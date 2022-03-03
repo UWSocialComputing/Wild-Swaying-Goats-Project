@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, Slider, Grid } from "@mui/material/";
 
 function RenderVoteButton(props) {
+
   const onClick = (event) => {
     event.preventDefault()
-    props.dispatch = {
+    props.dispatch({
       type: "VOTE",
       title: props.title,
       voteScore: props.voteScore
-    }
-
-    console.log("clicked!")
+    })
   }
   
   return (
@@ -29,12 +28,13 @@ export default function SliderScore(props) {
     console.log(voteScore)
   }
 
+
   function getAverage() {
     let total = 0
     for (const score of props.scores) {
       total += score
     }
-    return total / props.scores.length
+    return Math.round((total / props.scores.length) * 100) / 100
   }
 
   const avg = [
@@ -43,6 +43,13 @@ export default function SliderScore(props) {
       label: getAverage()
     }
   ]
+
+  const [oldAvg, setoldAvg] = useState(avg)
+  useEffect(() => {
+    if (avg != oldAvg) {
+      setoldAvg(avg)
+    }
+  }, [avg])
 
   return (
     <Grid container>
