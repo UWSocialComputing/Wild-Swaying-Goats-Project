@@ -4,6 +4,10 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
 
+/*
+The source link and description portion of the table.
+*/
+
 export default function Source(props){
     return (
         <Box sx={{ width: '100%', bgcolor: 'background.paper' }}>

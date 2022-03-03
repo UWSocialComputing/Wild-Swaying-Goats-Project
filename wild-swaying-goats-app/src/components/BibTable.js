@@ -7,6 +7,10 @@ import {
     Table
   } from "@material-ui/core";
 
+/*
+Groups together sources and slider voting mechanisms into tables.
+*/
+
 export default function BibTable(props) {
 
   return(

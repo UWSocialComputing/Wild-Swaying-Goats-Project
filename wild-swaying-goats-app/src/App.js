@@ -9,6 +9,11 @@ import { Grid, Toolbar, Button, AppBar, MuiThemeProvider } from "@material-ui/co
 import { createTheme } from '@material-ui/core/styles';
 import logo from './resources/logo-modified.png';
 
+/*
+Overarching app file includes our router, reducer which communicates with
+our json "database", and landing page.
+*/
+
 const theme = createTheme({
   palette: {
       primary: {

@@ -6,6 +6,10 @@ import { LocalizationProvider, DatePicker } from "@mui/lab";
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import { useNavigate } from 'react-router-dom';
 
+/*
+Form to take user input and save it to our json file to render a new source in our bibliography.
+*/
+
 function RenderAddSourceForm(props) {
 
   let source = props.source
