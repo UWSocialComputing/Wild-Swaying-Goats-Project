@@ -92,6 +92,9 @@ function App() {
           <Toolbar>
             <Grid container  style={{ marginTop: "5px" }} justifyContent="space-between">
               <Grid item>
+                <img src="resources/logo.png" alt="Sussy Goat">
+              </Grid>
+              <Grid item>
                 <h3> Wild Swaying Online Bibliography </h3>
               </Grid>
               <Grid item>
